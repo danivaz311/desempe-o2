@@ -1,3 +1,4 @@
+// Función para iniciar sesión
 function loguear() {
     var user = document.getElementById("Usuario").value;
     var pasword = document.getElementById("contrasena").value;
@@ -6,38 +7,27 @@ function loguear() {
     const validUser = "10155002-S";
     const validPassword = "93699";
 
+    // Si el usuario y contraseña son correctos, guarda la sesión
     if (user === validUser && pasword === validPassword) {
-        // Almacena en sessionStorage para que no se cierre la sesión fácilmente
-        sessionStorage.setItem("loggedIn", "true");
-        sessionStorage.setItem("usuario", user); // Almacenar el usuario
-        sessionStorage.setItem("contrasena", pasword); // Almacenar la contraseña
-        window.location = "/LOGIN.html";
+        sessionStorage.setItem("loggedIn", "true");  // Almacena sesión
+        window.location = "LOGIN.html";  // Redirige a la página protegida
     } else {
         alert("Datos incorrectos");
     }
 
-    // Prevenir el envío del formulario
-    return false;
+    return false;  // Prevenir el envío del formulario
 }
 
-// Verifica si el usuario está logueado al cargar la página
+// Verifica si el usuario está logueado al cargar la página protegida
 window.onload = function() {
     if (!sessionStorage.getItem("loggedIn")) {
-        window.location = "/index.html"; // Redirige a la página de login si no está logueado
-    } else {
-        // Evita el almacenamiento en caché de esta página
-        history.pushState(null, null, location.href);
-        window.onpopstate = function() {
-            history.pushState(null, null, location.href);
-        };
+        window.location = "index.html";  // Redirige al login si no está logueado
     }
 };
 
 // Función para cerrar sesión
 function cerrarSesion() {
-    sessionStorage.removeItem("loggedIn"); // Elimina el estado de sesión
-    window.location.replace("/index.html"); // Cambia a replace para evitar que el usuario vuelva a la página de índice
+    sessionStorage.removeItem("loggedIn");  // Elimina la sesión
+    window.location.replace("index.html");  // Redirige al login
 }
-
-
 

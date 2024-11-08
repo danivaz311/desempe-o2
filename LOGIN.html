@@ -75,13 +75,11 @@
 </main>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (sessionStorage.getItem("loggedIn")) {
             const usuario = sessionStorage.getItem('usuario');
             const contrasena = sessionStorage.getItem('contrasena');
 
             const info = document.getElementById('user-info');
             info.innerHTML = `<h2>Usuario:${usuario}</h2><h3>Contraseña:${contrasena}</h3>`;
-        }
     });
 </script>
 

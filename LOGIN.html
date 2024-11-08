@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESEMPEÑO</title>
+    <link rel="stylesheet" href="LOGIN.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">LG</p>
+        </div>
+        <div>
+            <a href="#NPS" class="nav link">NPS</a>
+            <a href="#RTAT" class="nav link">RTAT</a>
+            <a href="#RECLAIM" class="nav link">RECLAIM</a>
+            <a href="#GSFS" class="nav link">GSFS Mobile</a>
+            <b href="#" class="nav link" id="logoutButton" onclick="cerrarSesion()">Cerrar Sesión</b>
+        </div> 
+    </header>
+<body>
+    <div id="top"></div> <!-- Ancla en la parte superior -->
+
+    <main>
+    <section id="hero">
+        <h1><center>DESEMPEÑO <br> CENTROS DE SERVICIO LG</center></h1>
+        <br>
+          <!-- Mostrar el usuario y la contraseña -->
+          <div id="user-info"> 
+
+            
+          </div>
+            
+            <!-- Contenedor del iframe -->
+        <br>
+        <section id="Evaluacion General">  
+            <h2>Evaluacion General</h2>
+            <div id="iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2aAjPRm7rDMPUmS1GkZSoqRqvvt-MN6Pqju4JTwyoHHp0FB4VVCPtUEq5Epbb6w/pubhtml?gid=19917872&amp;single=true&amp;widget=true&amp;headers=false"></iframe>            </div>
+        </section>
+        <div class="espaciador"></div>
+        <section id="RTAT">  
+            <h2>Resultados Reclaim</h2>
+            <div id="iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2aAjPRm7rDMPUmS1GkZSoqRqvvt-MN6Pqju4JTwyoHHp0FB4VVCPtUEq5Epbb6w/pubhtml?gid=794754592&amp;single=true&amp;widget=true&amp;headers=false"></iframe
+            </div>
+        </section>
+        <div class="espaciador"></div>
+        <section id="RECLAIM">  
+            <h2>Resultados Reclaim</h2>
+            <div id="iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2aAjPRm7rDMPUmS1GkZSoqRqvvt-MN6Pqju4JTwyoHHp0FB4VVCPtUEq5Epbb6w/pubhtml?gid=1961634961&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+            </div>
+        </section>
+        <div class="espaciador"></div>
+        <section id="NPS">  
+            <h2>Resultados NPS</h2>
+            <div id="iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2aAjPRm7rDMPUmS1GkZSoqRqvvt-MN6Pqju4JTwyoHHp0FB4VVCPtUEq5Epbb6w/pubhtml?gid=1272493433&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+            </div>
+        </section>
+        <div class="espaciador"></div>
+        <section id="GSFS">  
+            <h2>Resultados GSFS</h2>
+            <div id="iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2aAjPRm7rDMPUmS1GkZSoqRqvvt-MN6Pqju4JTwyoHHp0FB4VVCPtUEq5Epbb6w/pubhtml?gid=19632449&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+            </div>
+        </section>
+        <div class="espaciador"></div>
+        <footer> <!-- Pie de página -->
+            <div class="container">
+                <p>&copy;LG Electronics</p>
+            </div>
+
+       
+        </footer>
+    </section>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (sessionStorage.getItem("loggedIn")) {
+            const usuario = sessionStorage.getItem('usuario');
+            const contrasena = sessionStorage.getItem('contrasena');
+
+            const info = document.getElementById('user-info');
+            info.innerHTML = `<h3>Usuario: ${usuario}</h3><h3>Contraseña: ${contrasena}</h3>`;
+        }
+    });
+</script>
+
+</body>
+</html>

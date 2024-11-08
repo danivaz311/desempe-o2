@@ -8,11 +8,15 @@ function loguear() {
     let name = user 
     let clave = pasword
 
+
+
+
+    sessionStorage.setItem("usuario", user); // Almacenar el usuario
+    sessionStorage.setItem("contrasena", pasword); // Almacenar la contraseña
     if (user === validUser && pasword === validPassword) {
         // Almacena en sessionStorage para que no se cierre la sesión fácilmente
         sessionStorage.setItem("loggedIn", "true");
-        sessionStorage.setItem("usuario", user); // Almacenar el usuario
-        sessionStorage.setItem("contrasena", pasword); // Almacenar la contraseña
+        
         window.location = "LOGIN.html";
     } else {
         alert("Datos incorrectos");

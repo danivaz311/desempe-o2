@@ -28,8 +28,7 @@
         <h1><center>DESEMPEÑO <br> CENTROS DE SERVICIO LG</center></h1>
         <br>
           <!-- Mostrar el usuario y la contraseña -->
-          <div id="user-info"> </div>
-            <!-- Contenedor del iframe -->
+          <div id="user-info"></div>
         <br>
         <section id="Evaluacion General">  
             <h2>Evaluacion General</h2>
@@ -81,7 +80,7 @@
             const contrasena = sessionStorage.getItem('contrasena');
 
             const info = document.getElementById('user-info');
-            info.innerHTML = `<h2>Usuario:${usuario}</h2> <h3>Contraseña:${contrasena}</h3>`;
+            info.innerHTML = `<h2>Usuario:${usuario}</h2><h3>Contraseña:${contrasena}</h3>`;
         }
     });
 </script>

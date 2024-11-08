@@ -23,7 +23,7 @@ function loguear() {
     }
 
     // Prevenir el envío del formulario
-    return false;
+  //  return false;
 }
 
 // Verifica si el usuario está logueado al cargar la página

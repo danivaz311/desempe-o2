@@ -6,6 +6,16 @@
     <title>DESEMPEÑO</title>
     <link rel="stylesheet" href="LOGIN.css">
     <script src="main.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+            const usuario = sessionStorage.getItem('usuario');
+            const contrasena = sessionStorage.getItem('contrasena');
+            const info = document.getElementById('user-info');
+            info.innerHTML = `<h2>Usuario:${usuario}</h2><h3>Contraseña:${contrasena}</h3>`;
+    });
+</script>
+
+    
 </head>
 <body>
     <header>
@@ -74,14 +84,7 @@
         </footer>
     </section>
 </main>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-            const usuario = sessionStorage.getItem('usuario');
-            const contrasena = sessionStorage.getItem('contrasena');
-            const info = document.getElementById('user-info');
-            info.innerHTML = `<h2>Usuario:${usuario}</h2><h3>Contraseña:${contrasena}</h3>`;
-    });
-</script>
+
 
 </body>
 </html>

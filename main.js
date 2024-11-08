@@ -23,14 +23,14 @@ function loguear() {
 }
 
 // Verifica si el usuario está logueado al cargar la página
-window.onload = function() {
+/*window.onload = function() {
     if (!sessionStorage.getItem("loggedIn")) {
         window.location = "index.HTML"; // Redirige a la página de login si no está logueado
     } else {
         // Evita el almacenamiento en caché de esta página
         history.pushState(null, null, location.href);
     }
-};
+};*/
 
 // Función para cerrar sesión
 function cerrarSesion() {

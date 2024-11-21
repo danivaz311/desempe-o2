@@ -52,12 +52,14 @@
             const range = document.getElementById('range').value;
             const value = document.getElementById('value').value;
 
-            const response = await fetch('https://script.google.com/macros/s/AKfycbyfBeQsseAnvYTHp9GuK8r074wySepsrtWnLk8kSzf8Y85HkdFlnuYpAEviIS5yWHL2/exec'), 
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ range, value }),
-            };
+          fetch('https://script.google.com/macros/s/AKfycbyfBeQsseAnvYTHp9GuK8r074wySepsrtWnLk8kSzf8Y85HkdFlnuYpAEviIS5yWHL2/exec', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ range: 'A1', value: 'Hola desde producción' }),
+});
+
 
             const result = await response.json();
             alert(result.message);

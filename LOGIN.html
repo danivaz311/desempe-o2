@@ -52,11 +52,12 @@
             const range = document.getElementById('range').value;
             const value = document.getElementById('value').value;
 
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxAwSVy5HhDo9VPog36aO_wI07u8wG-09J_icmsE8T76l75edRy62F-mheEiH_ciSii/exec', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbyfBeQsseAnvYTHp9GuK8r074wySepsrtWnLk8kSzf8Y85HkdFlnuYpAEviIS5yWHL2/exec'), 
+            {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ range, value }),
-            });
+            };
 
             const result = await response.json();
             alert(result.message);

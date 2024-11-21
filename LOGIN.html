@@ -54,11 +54,13 @@
 
  fetch('https://script.google.com/macros/s/AKfycbwTiKeTN9Ps734Zv3OOngDOtjuS0Gh7KgbYfiv5AUugf9BA0kNZrbMTgarzreSkFYRY/exec', {
     method: 'POST',
+    mode: 'no-cors', // Permite solicitudes sin verificar CORS, pero los datos de la respuesta no estarán accesibles
     headers: {
         'Content-Type': 'application/json',
     },
     body: JSON.stringify({ range: 'A1', value: 'Hola desde producción' }),
-})
+});
+
     .then(response => response.json())
     .then(data => console.log('Respuesta:', data))
     .catch(error => console.error('Error:', error));
